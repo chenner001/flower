@@ -1,0 +1,217 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
+    <title>花隐之森 · 序</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            background-color: #f7c0cb;  /* 粉色背景 */
+            background: linear-gradient(145deg, #ffc0cb 0%, #f5a9b8 100%);
+            min-height: 100vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            font-family: "Noto Serif SC", "Times New Roman", "Georgia", serif;
+            padding: 2rem;
+        }
+
+        .card {
+            max-width: 720px;
+            width: 100%;
+            background-color: rgba(255, 255, 255, 0.08);
+            backdrop-filter: blur(1px);
+            border-radius: 32px;
+            padding: 2.5rem 2rem;
+            box-shadow: 0 20px 35px rgba(0, 0, 0, 0.1);
+            border: 1px solid rgba(255, 255, 255, 0.3);
+        }
+
+        .content {
+            color: white;
+            font-size: 1.05rem;
+            line-height: 1.75;
+            text-shadow: 0 1px 2px rgba(0,0,0,0.1);
+        }
+
+        .content p {
+            margin-bottom: 1.2rem;
+        }
+
+        .quote {
+            font-style: italic;
+            border-left: 3px solid rgba(255,255,240,0.8);
+            padding-left: 1.2rem;
+            margin: 1.2rem 0;
+            color: #fff5e6;
+        }
+
+        .button-group {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            gap: 1.5rem;
+            margin-top: 2.5rem;
+        }
+
+        .btn {
+            background: rgba(255, 255, 255, 0.2);
+            border: 1px solid rgba(255, 255, 255, 0.6);
+            padding: 0.8rem 2rem;
+            font-size: 1.1rem;
+            font-weight: 500;
+            font-family: inherit;
+            color: white;
+            border-radius: 60px;
+            cursor: pointer;
+            transition: all 0.2s ease;
+            backdrop-filter: blur(4px);
+            box-shadow: 0 2px 6px rgba(0,0,0,0.05);
+            letter-spacing: 1px;
+        }
+
+        .btn:hover {
+            background: rgba(255, 255, 255, 0.35);
+            transform: scale(0.97);
+            border-color: white;
+        }
+
+        /* 模态框样式（作者的话） */
+        .modal {
+            display: none;
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-color: rgba(0, 0, 0, 0.6);
+            z-index: 2000;
+            justify-content: center;
+            align-items: center;
+            backdrop-filter: blur(3px);
+        }
+
+        .modal-content {
+            background: #fff8f0;
+            max-width: 440px;
+            width: 85%;
+            padding: 1.8rem 2rem;
+            border-radius: 28px;
+            color: #4a2e2a;
+            font-size: 0.95rem;
+            line-height: 1.6;
+            box-shadow: 0 20px 35px rgba(0,0,0,0.2);
+            border-top: 6px solid #f2a0ae;
+            font-family: system-ui, 'Segoe UI', sans-serif;
+        }
+
+        .modal-content p {
+            margin: 0.7rem 0;
+        }
+
+        .modal-content .close-modal {
+            display: block;
+            text-align: center;
+            margin-top: 1.2rem;
+            background: #e6c8bc;
+            border: none;
+            padding: 8px 18px;
+            border-radius: 40px;
+            cursor: pointer;
+            font-size: 0.85rem;
+            width: fit-content;
+            margin-left: auto;
+            margin-right: auto;
+            color: #3d2a22;
+        }
+
+        .close-modal:hover {
+            background: #d6b2a0;
+        }
+
+        @media (max-width: 550px) {
+            .card {
+                padding: 1.8rem 1.2rem;
+            }
+            .content {
+                font-size: 0.95rem;
+            }
+            .btn {
+                padding: 0.6rem 1.5rem;
+                font-size: 1rem;
+            }
+        }
+    </style>
+</head>
+<body>
+<div class="card">
+    <div class="content">
+        <p>我第一次听说落花神社，是在大学的图书馆里。</p>
+        <p>那天傍晚，我正在翻阅一本关于地方民俗的旧书，书页间忽然飘落一张手写的便签。上面只有几行字，字迹娟秀却透着某种说不出的陈旧感：</p>
+        <div class="quote">“落花神社。花隐之森。不要独自前往。”</div>
+        <p>便签背面还画着一个简单的鸟居符号，以及一串模糊的日期——看起来像是几十年前的。</p>
+        <p>我问遍了图书馆的管理员，没人知道这张便签从何而来。但“落花神社”四个字却像一根细刺，扎进了我的意识里。</p>
+        <p>后来，我试着在网上搜索这个名字。</p>
+        <p>网站存在。风格古朴，内容平常。一切都像一座再普通不过的地方神社。可每当我的目光扫过那些文字，总觉得页面深处还有什么东西在注视着我。</p>
+        <p>我说不清那种感觉。</p>
+        <p>也许是因为那个便签。也许是因为望月山的方向总让我觉得不安。也许只是因为，有些地方，一旦知道它的名字，就再也无法假装不知道了。</p>
+        <p>于是我开始调查。而调查的第一步，就是打开那个网站，输入第一个关键词——花隐。</p>
+        <p>后来的事，就是你们将要读到的。</p>
+    </div>
+    <div class="button-group">
+        <button class="btn" id="gotoShrineBtn">落花神社</button>
+        <button class="btn" id="authorNoteBtn">作者的话</button>
+    </div>
+</div>
+
+<!-- 作者的话模态框 -->
+<div id="authorModal" class="modal">
+    <div class="modal-content">
+        <p>1. 本游戏有部分日本背景，注意避雷</p>
+        <p>2. 部分页面有日文，但不影响正常流程</p>
+        <p>3. 本游戏主要是以搜索词推进剧情，无解谜</p>
+        <p>4. 所有搜索词均为简体中文</p>
+        <p>5. 本游戏有三个内置浏览器，不同的浏览器只能搜索特定的内容</p>
+        <p>6. 联系我：小红书@Romonosovp</p>
+        <button class="close-modal" id="closeModalBtn">关 闭</button>
+    </div>
+</div>
+
+<script>
+    (function() {
+        const shrineBtn = document.getElementById('gotoShrineBtn');
+        const authorBtn = document.getElementById('authorNoteBtn');
+        const modal = document.getElementById('authorModal');
+        const closeModalBtn = document.getElementById('closeModalBtn');
+
+        // 打开落花神社.html 新页面
+        shrineBtn.addEventListener('click', function() {
+            window.open('落花神社.html', '_blank');
+        });
+
+        // 显示作者的话弹窗
+        authorBtn.addEventListener('click', function() {
+            modal.style.display = 'flex';
+        });
+
+        // 关闭模态框：点击关闭按钮
+        closeModalBtn.addEventListener('click', function() {
+            modal.style.display = 'none';
+        });
+
+        // 点击模态框背景关闭
+        modal.addEventListener('click', function(e) {
+            if (e.target === modal) {
+                modal.style.display = 'none';
+            }
+        });
+    })();
+</script>
+</body>
+</html>
