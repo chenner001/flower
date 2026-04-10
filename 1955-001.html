@@ -1,0 +1,198 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>墓地管理ファイル（一部）</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: "MS Mincho", "Hiragino Mincho ProN", "Meiryo", serif;
+        }
+
+        body {
+            background: #dcdad5;
+            padding: 30px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            min-height: 100vh;
+        }
+
+        .jp-browser {
+            width: 940px;
+            background: #fdfdf8;
+            border: 2px solid #9c9a94;
+            box-shadow: 4px 4px 12px rgba(0,0,0,0.25);
+            border-radius: 2px;
+            overflow: hidden;
+        }
+
+        .jp-titlebar {
+            background: #c0c0c0;
+            padding: 6px 12px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            border-bottom: 1px solid #888;
+        }
+
+        .title-text {
+            font-size: 14px;
+            color: #111;
+        }
+
+        .window-buttons {
+            display: flex;
+            gap: 6px;
+        }
+
+        .win-btn {
+            width: 16px;
+            height: 14px;
+            background: #c0c0c0;
+            border: 1px solid #000;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 10px;
+        }
+
+        .jp-menu {
+            background: #d8d4c8;
+            padding: 4px 10px;
+            border-bottom: 1px solid #888;
+            font-size: 13px;
+            display: flex;
+            gap: 18px;
+        }
+
+        .jp-menu span {
+            color: #222;
+        }
+
+        .jp-toolbar {
+            background: #e9e5dc;
+            padding: 8px 15px;
+            border-bottom: 1px solid #aaa;
+            display: flex;
+            align-items: center;
+            gap: 12px;
+        }
+
+        .tool-btn {
+            padding: 2px 10px;
+            background: #f0ebe0;
+            border: 1px solid #888;
+            font-size: 12px;
+        }
+
+        .jp-content {
+            padding: 60px;
+            background: #ffffff;
+            min-height: 500px;
+            line-height: 2.1;
+        }
+
+        .article-title {
+            font-size: 26px;
+            text-align: center;
+            margin-bottom: 40px;
+            font-weight: normal;
+        }
+
+        .file-box {
+            max-width: 700px;
+            margin: 0 auto;
+            border-left: 2px solid #999;
+            padding-left: 20px;
+            font-size: 17px;
+        }
+
+        .section {
+            margin-bottom: 30px;
+        }
+
+        .section strong {
+            font-weight: bold;
+            color: #000;
+        }
+
+        .link {
+            margin-top: 60px;
+            font-size: 16px;
+            text-align: center;
+        }
+
+        .link a {
+            color: #111;
+            font-weight: bold;
+            text-decoration: underline;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="jp-browser">
+        <div class="jp-titlebar">
+            <div class="title-text">墓地管理文書</div>
+            <div class="window-buttons">
+                <div class="win-btn">ー</div>
+                <div class="win-btn">□</div>
+                <div class="win-btn">×</div>
+            </div>
+        </div>
+
+        <div class="jp-menu">
+            <span>ファイル</span>
+            <span>編集</span>
+            <span>表示</span>
+            <span>お気に入り</span>
+            <span>ツール</span>
+            <span>ヘルプ</span>
+        </div>
+
+        <div class="jp-toolbar">
+            <div class="tool-btn">戻る</div>
+            <div class="tool-btn">進む</div>
+            <div class="tool-btn">更新</div>
+        </div>
+
+        <div class="jp-content">
+            <h2 class="article-title">落花神社 墓地管理ファイル（一部）</h2>
+
+            <div class="file-box">
+                <div class="section">
+                    本档案为落花神社后山墓地管理记录，仅记录编号与身份，所有资料均为机密等级，严禁对外公开。<br>
+                    墓地内所有墓石均不刻写姓名，仅以编号区分，与外界完全隔绝。
+                </div>
+
+                <div class="section">
+                    <strong>【墓所登録情報】</strong><br>
+                    1955-001：深泽一郎<br>
+                    1955-002：未知女性（推测为深泽一郎之妻）<br>
+                    其余编号均为身份不明者，档案另行封存保管。
+                </div>
+
+                <div class="section">
+                    <strong>【内部報告書】</strong><br>
+                    经长期实验与人格转化作业后，统一执行以下处置规则：
+                    转化失败者统一葬于后山墓地，抹去原有身份与存在痕迹，不保留任何公开记录。
+                    转化成功者将获得全新身份，回归社会正常生活，或选择留任神社担任内部职务。
+                </div>
+
+                <div class="section">
+                    本制度自1955年正式实施，持续运作超过半世纪。
+                    所有实验、转化、埋葬流程均由神社内部全权管理，不对外公开任何信息。
+                </div>
+            </div>
+
+            <div class="link">
+                <a href="现代浏览器.html" target="_blank">▶ 新世界へ進む</a>
+            </div>
+        </div>
+    </div>
+</body>
+</html>

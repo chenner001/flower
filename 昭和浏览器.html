@@ -1,0 +1,235 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>インターネット閲覧器</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: "MS Mincho", "Hiragino Mincho ProN", "Meiryo", serif;
+        }
+
+        body {
+            background: #dcdad5;
+            padding: 30px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            min-height: 100vh;
+        }
+
+        /* 日本旧式ブラウザ */
+        .jp-browser {
+            width: 940px;
+            background: #fdfdf8;
+            border: 2px solid #9c9a94;
+            box-shadow: 4px 4px 12px rgba(0,0,0,0.25);
+            border-radius: 2px;
+            overflow: hidden;
+        }
+
+        /* タイトルバー */
+        .jp-titlebar {
+            background: #c0c0c0;
+            padding: 6px 12px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            border-bottom: 1px solid #888;
+        }
+
+        .title-text {
+            font-size: 14px;
+            color: #111;
+        }
+
+        .window-buttons {
+            display: flex;
+            gap: 6px;
+        }
+
+        .win-btn {
+            width: 16px;
+            height: 14px;
+            background: #c0c0c0;
+            border: 1px solid #000;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 10px;
+        }
+
+        /* メニューバー */
+        .jp-menu {
+            background: #d8d4c8;
+            padding: 4px 10px;
+            border-bottom: 1px solid #888;
+            font-size: 13px;
+            display: flex;
+            gap: 18px;
+        }
+
+        .jp-menu span {
+            color: #222;
+        }
+
+        /* ツールバー */
+        .jp-toolbar {
+            background: #e9e5dc;
+            padding: 8px 15px;
+            border-bottom: 1px solid #aaa;
+            display: flex;
+            align-items: center;
+            gap: 12px;
+        }
+
+        .tool-btn {
+            padding: 2px 10px;
+            background: #f0ebe0;
+            border: 1px solid #888;
+            font-size: 12px;
+        }
+
+        /* コンテンツ + 画面中央の検索ボックス */
+        .jp-content {
+            padding: 60px;
+            background: #ffffff;
+            min-height: 500px;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+        }
+
+        .content-title {
+            font-size: 28px;
+            text-align: center;
+            color: #222;
+            margin-bottom: 50px;
+        }
+
+        /* 画面中央に配置する検索エリア */
+        .center-search {
+            width: 60%;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            gap: 8px;
+        }
+
+        .center-search-input {
+            flex: 1;
+            height: 28px;
+            border: 1px solid #888;
+            padding: 0 12px;
+            font-size: 14px;
+        }
+
+        .center-search-btn {
+            height: 28px;
+            padding: 0 18px;
+            border: 1px solid #888;
+            background: #e9e5dc;
+            font-size: 14px;
+            cursor: pointer;
+        }
+
+        .info-text {
+            margin-top: 60px;
+            font-size: 15px;
+            text-align: center;
+            color: #444;
+            line-height: 2.2;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="jp-browser">
+        <!-- タイトル -->
+        <div class="jp-titlebar">
+            <div class="title-text">インターネット閲覧器</div>
+            <div class="window-buttons">
+                <div class="win-btn">ー</div>
+                <div class="win-btn">□</div>
+                <div class="win-btn">×</div>
+            </div>
+        </div>
+
+        <!-- メニュー -->
+        <div class="jp-menu">
+            <span>ファイル</span>
+            <span>編集</span>
+            <span>表示</span>
+            <span>お気に入り</span>
+            <span>ツール</span>
+            <span>ヘルプ</span>
+        </div>
+
+        <!-- ツールバー -->
+        <div class="jp-toolbar">
+            <div class="tool-btn">戻る</div>
+            <div class="tool-btn">進む</div>
+            <div class="tool-btn">更新</div>
+        </div>
+
+        <!-- メイン画面 + 中央検索 -->
+        <div class="jp-content">
+            <h2 class="content-title">インターネット閲覧システム</h2>
+
+            <!-- 画面の真ん中に配置 -->
+            <div class="center-search">
+                <input type="text" class="center-search-input" id="searchKeyword" placeholder="検索キーワード">
+                <button class="center-search-btn" id="searchButton">検索</button>
+            </div>
+
+            <div class="info-text">
+                昭和期 標準ブラウザ<br>
+                インターネット閲覧・検索・資料表示<br><br>
+                閲覧可能状態<br>
+                システム稼働中
+            </div>
+        </div>
+    </div>
+
+    <script>
+        // 关键词映射表
+        const keywordMap = {
+            '深泽一郎': '深泽一郎资料.html',
+            '红色药丸': '红色药丸.html',
+            '天落之花': '天落之花.html',
+            '天井绘': '天井绘.html',
+            '视觉诱导频率': '吉川秀一论文.html',
+            '吉川美代子': '吉川美代子.html',
+            'A-1': '吉川美代子.html',          // 新增：搜索A-1也打开吉川美代子.html
+            '1955-001': '1955-001.html'
+        };
+
+        const searchInput = document.getElementById('searchKeyword');
+        const searchBtn = document.getElementById('searchButton');
+
+        function performSearch() {
+            const keyword = searchInput.value.trim();
+            if (keyword === '') return;
+            
+            const targetUrl = keywordMap[keyword];
+            if (targetUrl) {
+                window.open(targetUrl, '_blank');
+            }
+            // 其他关键词无反应
+            // 不清空输入框，让用户可继续输入（可选）
+        }
+
+        searchBtn.addEventListener('click', performSearch);
+        searchInput.addEventListener('keypress', function(e) {
+            if (e.key === 'Enter') {
+                e.preventDefault();
+                performSearch();
+            }
+        });
+    </script>
+</body>
+</html>

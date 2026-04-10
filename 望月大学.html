@@ -1,0 +1,266 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>望月大学 - 官方网站</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: "Microsoft YaHei", sans-serif;
+        }
+
+        /* 顶部导航 */
+        .top-bar {
+            background: #092c5a;
+            color: white;
+            padding: 12px 0;
+            font-size: 13px;
+        }
+
+        .container {
+            width: 100%;
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+
+        /* 导航 */
+        .nav {
+            background: #0e3a72;
+        }
+
+        .nav-inner {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .logo {
+            color: white;
+            font-size: 24px;
+            font-weight: bold;
+            padding: 20px 0;
+        }
+
+        .nav-list {
+            display: flex;
+            list-style: none;
+        }
+
+        .nav-item {
+            padding: 28px 22px;
+            color: white;
+            cursor: pointer;
+            font-size: 15px;
+        }
+
+        .nav-item:hover,
+        .nav-item.active {
+            background: #154a91;
+        }
+
+        /* 首页大图背景 */
+        .banner {
+            width: 100%;
+            height: 520px;
+            background: url("Em0v7u8fRTqXspoEAAEYO2eSl6p35oYvPkJ5IZdjkHlt8HHXZBGD9g9R-cfMaIzW.jpg") center center no-repeat;
+            background-size: cover;
+            position: relative;
+        }
+
+        .banner::after {
+            content: "";
+            position: absolute;
+            width: 100%;
+            height: 100%;
+            background: rgba(0, 0, 0, 0.3);
+        }
+
+        /* 内容区域 */
+        .section {
+            padding: 60px 0;
+            background: #f7f8fa;
+            display: none;
+        }
+
+        .section.active {
+            display: block;
+        }
+
+        .home-box {
+            text-align: center;
+            padding: 40px;
+            background: white;
+            border-radius: 8px;
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.05);
+        }
+
+        .home-box h2 {
+            font-size: 28px;
+            margin-bottom: 20px;
+            color: #222;
+        }
+
+        .home-box p {
+            font-size: 17px;
+            line-height: 1.8;
+            color: #555;
+        }
+
+        /* 新闻页面 */
+        .news-box {
+            background: white;
+            padding: 50px;
+            border-radius: 8px;
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.05);
+        }
+
+        .news-title {
+            font-size: 26px;
+            text-align: center;
+            margin-bottom: 15px;
+        }
+
+        .news-info {
+            text-align: center;
+            color: #666;
+            margin-bottom: 35px;
+        }
+
+        .news-content {
+            font-size: 17px;
+            line-height: 1.9;
+            margin-bottom: 40px;
+        }
+
+        .img-box {
+            text-align: center;
+        }
+
+        .work-img {
+            max-width: 650px;
+            border-radius: 6px;
+            box-shadow: 0 3px 12px rgba(0, 0, 0, 0.1);
+        }
+
+        .img-desc {
+            margin-top: 12px;
+            color: #555;
+        }
+
+        /* 底部 */
+        .footer {
+            background: #0e3a72;
+            color: white;
+            text-align: center;
+            padding: 30px 0;
+            font-size: 14px;
+        }
+    </style>
+</head>
+
+<body>
+
+    <!-- 顶部信息栏 -->
+    <div class="top-bar">
+        <div class="container">欢迎访问望月大学官方网站</div>
+    </div>
+
+    <!-- 导航 -->
+    <div class="nav">
+        <div class="container nav-inner">
+            <div class="logo">望月大学</div>
+            <ul class="nav-list">
+                <li class="nav-item active" onclick="switchTab('home')">首页</li>
+                <li class="nav-item" onclick="switchTab('about')">学校概况</li>
+                <li class="nav-item" onclick="switchTab('news')">校园新闻</li>
+                <li class="nav-item" onclick="switchTab('xy')">院系设置</li>
+                <li class="nav-item" onclick="switchTab('sz')">师资队伍</li>
+                <li class="nav-item" onclick="switchTab('rc')">人才招聘</li>
+                <li class="nav-item" onclick="switchTab('hz')">合作交流</li>
+            </ul>
+        </div>
+    </div>
+
+    <!-- 首页大图 -->
+    <div class="banner" id="home-banner"></div>
+
+    <!-- 首页内容 -->
+    <div class="section active" id="home">
+        <div class="container">
+            <div class="home-box">
+                <h2>欢迎来到望月大学</h2>
+                <p>望月大学坐落于风景秀丽的望月山脚下，是一所以人文、艺术、理工交叉融合为特色的综合性高等院校。</p>
+                <p>学校秉承“厚德、笃学、求真、创新”的校训，坚持立德树人，致力于培养具有国际视野、人文素养与创新能力的新时代优秀人才。</p>
+                <p>近年来，学校在学科建设、人才培养、科学研究等方面稳步发展，成为区域高等教育的重要力量。</p>
+            </div>
+        </div>
+    </div>
+
+    <!-- 新闻内容 -->
+    <div class="section" id="news">
+        <div class="container">
+            <div class="news-box">
+                <h1 class="news-title">喜报！我校摄影系陈洛同学荣获校际摄影大赛二等奖</h1>
+                <div class="news-info">发布时间：2025-12-20 来源：艺术学院</div>
+
+                <div class="news-content">
+                    <p>近日，全省高校校际摄影大赛圆满落幕，我校艺术与设计学院摄影系<strong>陈洛同学</strong>凭借作品《山雪》荣获大赛二等奖，展现了望月大学学子优秀的艺术创作能力。</p>
+                    <p>获奖作品《山雪》取景于我校附近的望月山，画面以冬日雪景为基底，将山间静谧的氛围、自然光影与人文意境融为一体，构图沉稳、情感真挚，获得评委一致好评。</p>
+                    <p>陈洛同学表示，望月山独特的自然景观与文化气息一直是他创作的重要灵感来源，此次获奖既是对个人作品的肯定，也激励着他继续深耕摄影艺术，用镜头记录自然与人文之美。</p>
+                </div>
+
+                <div class="img-box">
+                    <img src="shanxue.jpg" class="work-img" alt="《山雪》">
+                    <div class="img-desc">获奖作品：《山雪》 | 拍摄地点：望月山</div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- 其他页面占位 -->
+    <div class="section" id="about">
+        <div class="container"><div class="home-box"><h2>学校概况</h2><p>建设中……</p></div></div>
+    </div>
+    <div class="section" id="xy">
+        <div class="container"><div class="home-box"><h2>院系设置</h2><p>建设中……</p></div></div>
+    </div>
+    <div class="section" id="sz">
+        <div class="container"><div class="home-box"><h2>师资队伍</h2><p>建设中……</p></div></div>
+    </div>
+    <div class="section" id="rc">
+        <div class="container"><div class="home-box"><h2>人才招聘</h2><p>建设中……</p></div></div>
+    </div>
+    <div class="section" id="hz">
+        <div class="container"><div class="home-box"><h2>合作交流</h2><p>建设中……</p></div></div>
+    </div>
+
+    <!-- 底部 -->
+    <div class="footer">
+        <div class="container">望月大学 © 版权所有 | 官方网站</div>
+    </div>
+
+    <script>
+        // 切换导航
+        function switchTab(id) {
+            // 隐藏所有内容
+            document.querySelectorAll('.section').forEach(el => el.classList.remove('active'));
+            document.querySelectorAll('.nav-item').forEach(el => el.classList.remove('active'));
+            
+            // 显示选中内容
+            document.getElementById(id).classList.add('active');
+            event.target.classList.add('active');
+
+            // 控制首页大图
+            if (id === 'home') {
+                document.getElementById('home-banner').style.display = 'block';
+            } else {
+                document.getElementById('home-banner').style.display = 'none';
+            }
+        }
+    </script>
+</body>
+</html>

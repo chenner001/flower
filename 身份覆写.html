@@ -1,0 +1,180 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>落花神社 | 身份覆写模板</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: "SimSun", "Microsoft YaHei", serif;
+        }
+
+        body {
+            background-image: url('https://images.unsplash.com/photo-1528360983277-13d401cdc186?ixlib=rb-4.0.3&auto=format&fit=crop&w=1920&q=100');
+            background-size: cover;
+            background-position: center;
+            background-attachment: fixed;
+            background-repeat: no-repeat;
+            color: #222;
+            line-height: 1.8;
+        }
+
+        .header {
+            width: 100%;
+            background-color: rgba(255,255,255,0.92);
+            padding: 18px 60px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            position: fixed;
+            top: 0;
+            left: 0;
+            z-index: 999;
+            border-bottom: 1px solid #ddd;
+        }
+
+        .logo {
+            font-size: 22px;
+            font-weight: bold;
+            letter-spacing: 2px;
+        }
+
+        .nav {
+            display: flex;
+            gap: 36px;
+        }
+
+        .nav a {
+            text-decoration: none;
+            color: #222;
+            font-size: 16px;
+            transition: opacity 0.2s;
+        }
+
+        .nav a:hover {
+            opacity: 0.6;
+        }
+
+        .container {
+            max-width: 1000px;
+            margin: 140px auto 80px;
+            background-color: rgba(255,255,255,0.88);
+            padding: 70px 80px;
+        }
+
+        section {
+            margin-bottom: 70px;
+        }
+
+        h1 {
+            font-size: 26px;
+            margin-bottom: 24px;
+            padding-bottom: 10px;
+            border-bottom: 1px solid #999;
+            font-weight: normal;
+        }
+
+        p {
+            margin-bottom: 16px;
+            font-size: 15px;
+            text-align: justify;
+        }
+
+        .form-item {
+            margin: 24px 0;
+            font-size: 16px;
+            line-height: 2;
+        }
+
+        .form-label {
+            display: inline-block;
+            width: 140px;
+            font-weight: bold;
+        }
+
+        .form-blank {
+            border-bottom: 1px solid #666;
+            padding: 0 10px;
+            min-width: 300px;
+            display: inline-block;
+        }
+
+        .example {
+            background: #f6f6f6;
+            padding: 16px 24px;
+            margin: 20px 0;
+            border-left: 2px solid #999;
+        }
+
+        .running {
+            color: #c0392b;
+            font-weight: bold;
+            background: #ffebee;
+            padding: 4px 10px;
+            border-radius: 4px;
+        }
+
+        .file-box {
+            margin-top: 40px;
+            padding: 24px;
+            background: #f9f9f9;
+            border: 1px solid #ccc;
+        }
+
+        .footer {
+            width: 100%;
+            background-color: rgba(255,255,255,0.92);
+            text-align: center;
+            padding: 24px 0;
+            font-size: 14px;
+            border-top: 1px solid #ddd;
+        }
+    </style>
+</head>
+<body>
+
+<div class="header">
+    <div class="logo">落花神社</div>
+    <div class="nav">
+        <a href="落花神社.html">返回首页</a>
+    </div>
+</div>
+
+<div class="container">
+    <section id="identity">
+        <h1>身份覆写 · 空白模板</h1>
+
+        <div class="form-item">
+            <span class="form-label">目标旧身份：</span>
+            <span class="form-blank"></span>
+        </div>
+        <div class="form-item">
+            <span class="form-label">植入新身份：</span>
+            <span class="form-blank"></span>
+        </div>
+
+        <div class="example">
+            <strong>示例：</strong><br>
+            旧：深泽一郎 → 新：吉川家的仆人。
+        </div>
+
+        <div class="file-box">
+            <h3>个人覆写档案 · <span class="running">进行中</span></h3>
+            <p style="margin-top:12px;">
+                旧身份：陈洛，男，22岁，望月大学摄影系大学生。<br>
+                新身份：吉川秀树，男，22岁，落花神社见习神主。
+            </p>
+        </div>
+
+    </section>
+</div>
+
+<div class="footer">
+    © 2025 落花神社 | 花隐之杜
+</div>
+
+</body>
+</html>

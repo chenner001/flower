@@ -1,0 +1,260 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>吉川秀樹 身分証明書</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: "MS Mincho", "Hiragino Mincho ProN", "Meiryo", serif;
+        }
+
+        body {
+            background: #dcdad5;
+            padding: 30px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            min-height: 100vh;
+        }
+
+        .jp-browser {
+            width: 940px;
+            background: #fdfdf8;
+            border: 2px solid #9c9a94;
+            box-shadow: 4px 4px 12px rgba(0,0,0,0.25);
+            border-radius: 2px;
+            overflow: hidden;
+        }
+
+        .jp-titlebar {
+            background: #c0c0c0;
+            padding: 6px 12px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            border-bottom: 1px solid #888;
+        }
+
+        .title-text {
+            font-size: 14px;
+            color: #111;
+        }
+
+        .window-buttons {
+            display: flex;
+            gap: 6px;
+        }
+
+        .win-btn {
+            width: 16px;
+            height: 14px;
+            background: #c0c0c0;
+            border: 1px solid #000;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 10px;
+        }
+
+        .jp-menu {
+            background: #d8d4c8;
+            padding: 4px 10px;
+            border-bottom: 1px solid #888;
+            font-size: 13px;
+            display: flex;
+            gap: 18px;
+        }
+
+        .jp-menu span {
+            color: #222;
+        }
+
+        .jp-toolbar {
+            background: #e9e5dc;
+            padding: 8px 15px;
+            border-bottom: 1px solid #aaa;
+            display: flex;
+            align-items: center;
+            gap: 12px;
+        }
+
+        .tool-btn {
+            padding: 2px 10px;
+            background: #f0ebe0;
+            border: 1px solid #888;
+            font-size: 12px;
+        }
+
+        .jp-content {
+            padding: 60px;
+            background: #ffffff;
+            min-height: 500px;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .card-title {
+            font-size: 26px;
+            margin-bottom: 30px;
+            font-weight: normal;
+            text-align: center;
+        }
+
+        .photo-box {
+            text-align: center;
+            margin: 20px 0;
+        }
+
+        .photo {
+            width: 180px;
+            height: 240px;
+            object-fit: cover;
+            border: 1px solid #888;
+            box-shadow: 2px 2px 8px rgba(0,0,0,0.15);
+        }
+
+        .photo-label {
+            font-size: 14px;
+            color: #444;
+            margin-top: 8px;
+        }
+
+        .info-box {
+            margin-top: 30px;
+            font-size: 17px;
+            line-height: 2.2;
+            text-align: center;
+            border-left: 2px solid #999;
+            padding-left: 20px;
+        }
+
+        .info-box strong {
+            font-weight: bold;
+            color: #000;
+        }
+
+        .diary-box {
+            margin-top: 40px;
+            padding: 22px 26px;
+            background: #f7f7f2;
+            border-left: 2px solid #888;
+            font-size: 16px;
+            line-height: 2;
+            text-align: left;
+            width: 65%;
+        }
+
+        .diary-box strong {
+            font-weight: bold;
+            color: #000;
+        }
+
+        /* 可点击的“研修日记”样式 */
+        .clickable-diary {
+            cursor: pointer;
+            text-decoration: underline;
+            text-underline-offset: 4px;
+            transition: opacity 0.2s;
+        }
+        .clickable-diary:hover {
+            opacity: 0.7;
+        }
+
+        .clickable-hint {
+            font-size: 13px;
+            color: #6a5c4c;
+            margin-top: 6px;
+            text-align: right;
+            cursor: default;
+        }
+
+        .link {
+            margin-top: 50px;
+            font-size: 15px;
+            text-align: center;
+        }
+
+        .link a {
+            color: #111;
+            text-decoration: underline;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="jp-browser">
+        <div class="jp-titlebar">
+            <div class="title-text">身分証明書 閲覧</div>
+            <div class="window-buttons">
+                <div class="win-btn">ー</div>
+                <div class="win-btn">□</div>
+                <div class="win-btn">×</div>
+            </div>
+        </div>
+
+        <div class="jp-menu">
+            <span>ファイル</span>
+            <span>編集</span>
+            <span>表示</span>
+            <span>お気に入り</span>
+            <span>ツール</span>
+            <span>ヘルプ</span>
+        </div>
+
+        <div class="jp-toolbar">
+            <div class="tool-btn">戻る</div>
+            <div class="tool-btn">進む</div>
+            <div class="tool-btn">更新</div>
+        </div>
+
+        <div class="jp-content">
+            <h2 class="card-title">落花神社 身分証明書</h2>
+
+            <div class="photo-box">
+                <img src="chenluohefu.jpg" class="photo" alt="吉川秀樹 証明写真">
+                <div class="photo-label">吉川秀樹 本人</div>
+            </div>
+
+            <div class="info-box">
+                氏名：<strong>吉川 秀樹（よしかわ ひでき）</strong><br>
+                所属：<strong>落花神社</strong><br>
+                役職：<strong>神職研修生</strong><br>
+                登録日：<strong>2025年</strong><br><br>
+                本書は、落花神社にて正式に登録された研修生身分を証明する。
+            </div>
+
+            <!-- 研修日记部分：只有“研修日记”四个字可点击 -->
+            <div class="diary-box">
+                <strong>
+                    <span class="clickable-diary" id="diaryLink">研修日记</span>（吉川秀樹）
+                </strong><br>
+                <br>
+                今日学习神乐舞。老师说我很有天赋。<br>
+                我好像以前就会，身体自己会动。<br>
+                但我不记得小时候的事了。
+            </div>
+            <div class="clickable-hint">※ 「研修日记」をクリックで詳細を開く</div>
+
+            <div class="link">
+                <a href="昭和浏览器.html">▶ 資料一覧に戻る</a>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        const diaryLink = document.getElementById('diaryLink');
+        if (diaryLink) {
+            diaryLink.addEventListener('click', function(e) {
+                e.stopPropagation();  // 防止冒泡
+                window.open('研修日记.html', '_blank');
+            });
+        }
+    </script>
+</body>
+</html>

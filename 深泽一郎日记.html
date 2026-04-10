@@ -1,0 +1,191 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>深沢一郎 日記</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: "MS Mincho", "Hiragino Mincho ProN", "Meiryo", serif;
+        }
+
+        body {
+            background: #dcdad5;
+            padding: 30px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            min-height: 100vh;
+        }
+
+        .jp-browser {
+            width: 940px;
+            background: #fdfdf8;
+            border: 2px solid #9c9a94;
+            box-shadow: 4px 4px 12px rgba(0,0,0,0.25);
+            border-radius: 2px;
+            overflow: hidden;
+        }
+
+        .jp-titlebar {
+            background: #c0c0c0;
+            padding: 6px 12px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            border-bottom: 1px solid #888;
+        }
+
+        .title-text {
+            font-size: 14px;
+            color: #111;
+        }
+
+        .window-buttons {
+            display: flex;
+            gap: 6px;
+        }
+
+        .win-btn {
+            width: 16px;
+            height: 14px;
+            background: #c0c0c0;
+            border: 1px solid #000;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 10px;
+        }
+
+        .jp-menu {
+            background: #d8d4c8;
+            padding: 4px 10px;
+            border-bottom: 1px solid #888;
+            font-size: 13px;
+            display: flex;
+            gap: 18px;
+        }
+
+        .jp-menu span {
+            color: #222;
+        }
+
+        .jp-toolbar {
+            background: #e9e5dc;
+            padding: 8px 15px;
+            border-bottom: 1px solid #aaa;
+            display: flex;
+            align-items: center;
+            gap: 12px;
+        }
+
+        .tool-btn {
+            padding: 2px 10px;
+            background: #f0ebe0;
+            border: 1px solid #888;
+            font-size: 12px;
+        }
+
+        .jp-content {
+            padding: 60px;
+            background: #ffffff;
+            min-height: 500px;
+            line-height: 2.2;
+        }
+
+        .diary-title {
+            font-size: 26px;
+            text-align: center;
+            margin-bottom: 40px;
+            font-weight: normal;
+        }
+
+        .diary-date {
+            font-size: 16px;
+            text-align: center;
+            margin-bottom: 30px;
+            color: #444;
+        }
+
+        .diary-text {
+            font-size: 17px;
+            white-space: pre-line;
+            text-align: left;
+            border-left: 2px solid #999;
+            padding-left: 20px;
+            margin: 0 auto;
+            max-width: 600px;
+        }
+
+        .diary-text strong {
+            font-weight: bold;
+            color: #000;
+        }
+
+        .link {
+            margin-top: 50px;
+            font-size: 15px;
+            text-align: center;
+        }
+
+        .link a {
+            color: #111;
+            text-decoration: underline;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="jp-browser">
+        <div class="jp-titlebar">
+            <div class="title-text">日記閲覧</div>
+            <div class="window-buttons">
+                <div class="win-btn">ー</div>
+                <div class="win-btn">□</div>
+                <div class="win-btn">×</div>
+            </div>
+        </div>
+
+        <div class="jp-menu">
+            <span>ファイル</span>
+            <span>編集</span>
+            <span>表示</span>
+            <span>お気に入り</span>
+            <span>ツール</span>
+            <span>ヘルプ</span>
+        </div>
+
+        <div class="jp-toolbar">
+            <div class="tool-btn">戻る</div>
+            <div class="tool-btn">進む</div>
+            <div class="tool-btn">更新</div>
+        </div>
+
+        <div class="jp-content">
+            <h2 class="diary-title">深沢一郎 日記 摘錄</h2>
+            <div class="diary-date">1955年 秋</div>
+
+            <div class="diary-text">
+后山的疗养院里，一直在进行着我无法理解的事情。
+这里的人神色恍惚，如同失去了灵魂。
+
+<strong>他们在给病人吃一种“红色药丸”。
+吃完后，病人会变得安静，眼睛空洞。
+我妻子吃完后，不认得我了。
+她叫我“吉川大人”。</strong>
+
+我不敢声张，只能偷偷记下这一切。
+我想救她，可我连靠近都做不到。
+这里的一切，都让人感到绝望。
+            </div>
+
+            <div class="link">
+                <a href="深泽一郎资料.html">▶ 戻る：深沢一郎戸籍資料</a>
+            </div>
+        </div>
+    </div>
+</body>
+</html>

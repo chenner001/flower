@@ -1,0 +1,176 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>戸籍資料 - 深沢一郎</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: "MS Mincho", "Hiragino Mincho ProN", "Meiryo", serif;
+        }
+
+        body {
+            background: #dcdad5;
+            padding: 30px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            min-height: 100vh;
+        }
+
+        /* 日本旧式ブラウザ */
+        .jp-browser {
+            width: 940px;
+            background: #fdfdf8;
+            border: 2px solid #9c9a94;
+            box-shadow: 4px 4px 12px rgba(0,0,0,0.25);
+            border-radius: 2px;
+            overflow: hidden;
+        }
+
+        /* タイトルバー */
+        .jp-titlebar {
+            background: #c0c0c0;
+            padding: 6px 12px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            border-bottom: 1px solid #888;
+        }
+
+        .title-text {
+            font-size: 14px;
+            color: #111;
+        }
+
+        .window-buttons {
+            display: flex;
+            gap: 6px;
+        }
+
+        .win-btn {
+            width: 16px;
+            height: 14px;
+            background: #c0c0c0;
+            border: 1px solid #000;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 10px;
+        }
+
+        /* メニューバー */
+        .jp-menu {
+            background: #d8d4c8;
+            padding: 4px 10px;
+            border-bottom: 1px solid #888;
+            font-size: 13px;
+            display: flex;
+            gap: 18px;
+        }
+
+        .jp-menu span {
+            color: #222;
+        }
+
+        /* ツールバー */
+        .jp-toolbar {
+            background: #e9e5dc;
+            padding: 8px 15px;
+            border-bottom: 1px solid #aaa;
+            display: flex;
+            align-items: center;
+            gap: 12px;
+        }
+
+        .tool-btn {
+            padding: 2px 10px;
+            background: #f0ebe0;
+            border: 1px solid #888;
+            font-size: 12px;
+        }
+
+        /* コンテンツ */
+        .jp-content {
+            padding: 60px;
+            background: #ffffff;
+            min-height: 500px;
+            line-height: 2.0;
+        }
+
+        .title {
+            font-size: 26px;
+            text-align: center;
+            margin-bottom: 40px;
+            font-weight: normal;
+        }
+
+        .info {
+            font-size: 16px;
+            margin-bottom: 12px;
+        }
+
+        .link {
+            margin-top: 50px;
+            font-size: 15px;
+            text-align: center;
+        }
+
+        .link a {
+            color: #111;
+            text-decoration: underline;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="jp-browser">
+        <!-- タイトル -->
+        <div class="jp-titlebar">
+            <div class="title-text">戸籍資料閲覧</div>
+            <div class="window-buttons">
+                <div class="win-btn">ー</div>
+                <div class="win-btn">□</div>
+                <div class="win-btn">×</div>
+            </div>
+        </div>
+
+        <!-- メニュー -->
+        <div class="jp-menu">
+            <span>ファイル</span>
+            <span>編集</span>
+            <span>表示</span>
+            <span>お気に入り</span>
+            <span>ツール</span>
+            <span>ヘルプ</span>
+        </div>
+
+        <!-- ツールバー -->
+        <div class="jp-toolbar">
+            <div class="tool-btn">戻る</div>
+            <div class="tool-btn">進む</div>
+            <div class="tool-btn">更新</div>
+        </div>
+
+        <!-- メイン画面 -->
+        <div class="jp-content">
+            <h2 class="title">深沢 一郎 戸籍資料</h2>
+
+            <div class="info">氏名：深沢 一郎（ふかさわ いちろう）</div>
+            <div class="info">生年月日：昭和8年（1933年）</div>
+            <div class="info">住所：望月山地区、大字落花</div>
+            <div class="info">職業：老師（山村老師）</div>
+            <div class="info">家族：妻（1955年に行方不明）</div>
+            <div class="info">状態：1955年、失踪届け出済み</div>
+            <div class="info">特記事項：療養施設付近で最後目撃、その後消息途絶</div>
+
+            <div class="link">
+                <a href="深泽一郎日记.html">▶ 深沢一郎の日記を見る</a>
+            </div>
+        </div>
+    </div>
+</body>
+</html>

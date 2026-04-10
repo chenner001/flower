@@ -1,0 +1,200 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>新聞報道｜望月山地区 1955年 失踪者一覧</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            background-color: #f6f4ee;
+            background-image: url("data:image/svg+xml,%3Csvg width='52' height='26' viewBox='0 0 52 26' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='none' fill-rule='evenodd'%3E%3Cg fill='%23d8d4c2' fill-opacity='0.2'%3E%3Cpath d='M10 10c0-2.21-1.79-4-4-4-3.314 0-6-2.686-6-6h2c0 2.21 1.79 4 4 4 3.314 0 6 2.686 6 6 0 2.21 1.79 4 4 4v2c-3.314 0-6-2.686-6-6zm25.464-1.95l8.486 8.486-1.414 1.414-8.486-8.486 1.414-1.414z' /%3E%3C/g%3E%3C/g%3E%3C/svg%3E");
+            font-family: "Times New Roman", "SimSun", serif;
+            color: #1a1a1a;
+            line-height: 1.75;
+            padding: 20px;
+        }
+
+        /* 返回按钮 */
+        .back-btn {
+            display: inline-block;
+            margin-bottom: 20px;
+            padding: 6px 14px;
+            border: 1px solid #888;
+            text-decoration: none;
+            color: #222;
+            font-size: 15px;
+            background: rgba(255,255,255,0.7);
+        }
+        .back-btn:hover {
+            opacity: 0.7;
+        }
+
+        /* 新闻报纸容器 */
+        .news-paper {
+            max-width: 900px;
+            margin: 40px auto;
+            background: #fff;
+            padding: 60px 70px;
+            border: 1px solid #ddd;
+            box-shadow: 0 0 20px rgba(0,0,0,0.1);
+            position: relative;
+        }
+
+        /* 报纸头部 */
+        .news-header {
+            text-align: center;
+            border-bottom: 3px double #555;
+            padding-bottom: 12px;
+            margin-bottom: 30px;
+        }
+        .news-title {
+            font-size: 36px;
+            font-weight: bold;
+            letter-spacing: 4px;
+        }
+        .news-sub {
+            font-size: 14px;
+            color: #666;
+            margin-top: 4px;
+        }
+
+        /* 日文标签 */
+        .jp-tag {
+            font-size: 13px;
+            color: #888;
+            margin: 0 6px;
+        }
+
+        /* 新闻标题 */
+        .headline {
+            font-size: 28px;
+            font-weight: bold;
+            text-align: center;
+            margin-bottom: 20px;
+            letter-spacing: 2px;
+        }
+
+        /* 日期信息 */
+        .date-info {
+            text-align: center;
+            font-size: 15px;
+            color: #444;
+            margin-bottom: 30px;
+            border-bottom: 1px solid #ccc;
+            padding-bottom: 10px;
+        }
+
+        /* 正文 */
+        .article {
+            font-size: 16px;
+            text-align: justify;
+            margin-bottom: 30px;
+        }
+
+        /* 名单样式 */
+        .missing-list {
+            margin: 30px 0;
+            padding-left: 20px;
+            columns: 2;
+            column-gap: 40px;
+        }
+        .missing-list li {
+            list-style: none;
+            margin-bottom: 10px;
+            font-size: 16px;
+            position: relative;
+            padding-left: 14px;
+        }
+        .missing-list li::before {
+            content: "・";
+            position: absolute;
+            left: 0;
+            color: #222;
+        }
+        .note {
+            font-size: 13px;
+            color: #b00;
+            margin-left: 8px;
+            font-weight: bold;
+        }
+
+        /* 底部 */
+        .news-footer {
+            margin-top: 50px;
+            padding-top: 20px;
+            border-top: 1px solid #ccc;
+            text-align: center;
+            font-size: 14px;
+            color: #666;
+        }
+    </style>
+</head>
+<body>
+
+<div class="news-paper">
+    <!-- 返回按钮 -->
+    <a href="昭和浏览器.html" class="back-btn">← 返回</a>
+
+    <!-- 报纸头部 -->
+    <div class="news-header">
+        <div class="news-title">望月山新聞</div>
+        <div class="news-sub">MOCHIZUKIYAMA SHIMBUN <span class="jp-tag">昭和三十年</span> 地方版</div>
+    </div>
+
+    <!-- 大标题 -->
+    <h1 class="headline">望月山地区にて15人が失踪、9人は落花神社付近で目撃</h1>
+
+    <!-- 日期 -->
+    <div class="date-info">
+        昭和三十年（1955年）年末調査報告書 <span class="jp-tag">｜ 取材：地方行政課</span>
+    </div>
+
+    <!-- 正文 -->
+    <div class="article">
+        地方行政課の最終調査によると、1955年の望月山地域では15人が「行方不明」として登録された。
+        いずれの事例も遺品や目撃情報が途絶え、警察の捜査は難航し、最終的に不明事件として結審された。
+    </div>
+    <div class="article">
+        特筆すべき点として、15人のうち9人の最終目撃場所が落花神社周辺であることが確認されている。
+        神社の裏山は同年より立ち入り禁止となり、関連する詳細な情報は非公開となっている。
+    </div>
+
+    <!-- 失踪者名单 -->
+    <h2 style="font-size:18px; margin:20px 0;">■ 失踪者名簿（15名）</h2>
+    <ul class="missing-list">
+        <li>佐藤清</li>
+        <li>鈴木健太</li>
+        <li>高橋次郎</li>
+        <li>田中康夫</li>
+        <li>山本美代</li>
+        <li>吉田稔</li>
+        <li>伊藤幸雄</li>
+        <li>渡辺春</li>
+        <li>中村進</li>
+        <li>小林豊</li>
+        <li>斉藤恵子</li>
+        <li>加藤博</li>
+        <li>松本治</li>
+        <li>井上真理</li>
+        <li>深泽一郎 <span class="note">备注：“曾试图闯入疗养院救出妻子，本人随后失踪。</span></li>
+    </ul>
+
+    <div class="article">
+        現在まで全員の帰還記録は確認されておらず、事件は未だ未解決のままとなっている。
+        地域の伝承や神域伝説との関連を指摘する声もあるが、行政は公式にコメントを出していない。
+    </div>
+
+    <!-- 报纸底部 -->
+    <div class="news-footer">
+        望月山新聞・地方版 © 1955 Mochizukiyama News | 取材協力：落花神社 管理事務所
+    </div>
+</div>
+
+</body>
+</html>

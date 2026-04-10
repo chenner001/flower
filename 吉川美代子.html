@@ -1,0 +1,205 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>吉川美代子 身分証明書</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: "MS Mincho", "Hiragino Mincho ProN", "Meiryo", serif;
+        }
+
+        body {
+            background: #dcdad5;
+            padding: 30px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            min-height: 100vh;
+        }
+
+        .jp-browser {
+            width: 940px;
+            background: #fdfdf8;
+            border: 2px solid #9c9a94;
+            box-shadow: 4px 4px 12px rgba(0,0,0,0.25);
+            border-radius: 2px;
+            overflow: hidden;
+        }
+
+        .jp-titlebar {
+            background: #c0c0c0;
+            padding: 6px 12px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            border-bottom: 1px solid #888;
+        }
+
+        .title-text {
+            font-size: 14px;
+            color: #111;
+        }
+
+        .window-buttons {
+            display: flex;
+            gap: 6px;
+        }
+
+        .win-btn {
+            width: 16px;
+            height: 14px;
+            background: #c0c0c0;
+            border: 1px solid #000;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 10px;
+        }
+
+        .jp-menu {
+            background: #d8d4c8;
+            padding: 4px 10px;
+            border-bottom: 1px solid #888;
+            font-size: 13px;
+            display: flex;
+            gap: 18px;
+        }
+
+        .jp-menu span {
+            color: #222;
+        }
+
+        .jp-toolbar {
+            background: #e9e5dc;
+            padding: 8px 15px;
+            border-bottom: 1px solid #aaa;
+            display: flex;
+            align-items: center;
+            gap: 12px;
+        }
+
+        .tool-btn {
+            padding: 2px 10px;
+            background: #f0ebe0;
+            border: 1px solid #888;
+            font-size: 12px;
+        }
+
+        .jp-content {
+            padding: 60px;
+            background: #ffffff;
+            min-height: 500px;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .card-title {
+            font-size: 26px;
+            margin-bottom: 30px;
+            font-weight: normal;
+            text-align: center;
+        }
+
+        /* 照片区域 */
+        .photo-box {
+            text-align: center;
+            margin: 20px 0;
+        }
+
+        .photo {
+            width: 180px;
+            height: 240px;
+            object-fit: cover;
+            border: 1px solid #888;
+            box-shadow: 2px 2px 8px rgba(0,0,0,0.15);
+        }
+
+        .photo-label {
+            font-size: 14px;
+            color: #444;
+            margin-top: 8px;
+        }
+
+        /* 证件信息 */
+        .info-box {
+            margin-top: 30px;
+            font-size: 17px;
+            line-height: 2.2;
+            text-align: center;
+            border-left: 2px solid #999;
+            padding-left: 20px;
+        }
+
+        .info-box strong {
+            font-weight: bold;
+            color: #000;
+        }
+
+        .link {
+            margin-top: 50px;
+            font-size: 15px;
+            text-align: center;
+        }
+
+        .link a {
+            color: #111;
+            text-decoration: underline;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="jp-browser">
+        <div class="jp-titlebar">
+            <div class="title-text">身分証明書 閲覧</div>
+            <div class="window-buttons">
+                <div class="win-btn">ー</div>
+                <div class="win-btn">□</div>
+                <div class="win-btn">×</div>
+            </div>
+        </div>
+
+        <div class="jp-menu">
+            <span>ファイル</span>
+            <span>編集</span>
+            <span>表示</span>
+            <span>お気に入り</span>
+            <span>ツール</span>
+            <span>ヘルプ</span>
+        </div>
+
+        <div class="jp-toolbar">
+            <div class="tool-btn">戻る</div>
+            <div class="tool-btn">進む</div>
+            <div class="tool-btn">更新</div>
+        </div>
+
+        <div class="jp-content">
+            <h2 class="card-title">落花神社 身分証明書</h2>
+
+            <div class="photo-box">
+                <img src="meidaizi.jpg" class="photo" alt="吉川美代子 証明写真">
+                <div class="photo-label">吉川美代子 本人</div>
+            </div>
+
+            <div class="info-box">
+                氏名：<strong>吉川 美代子（よしかわ みよこ）</strong><br>
+                所属：<strong>落花神社</strong><br>
+                役職：<strong>管理人</strong><br>
+                就任日：<strong>1956年1月</strong> より就任<br><br>
+                本書は、落花神社にて正式に登録された管理者身分を証明する。
+            </div>
+
+            <div class="link">
+                <a href="游客游记.html">▶落花神社観光客紀行</a>
+            </div>
+        </div>
+    </div>
+</body>
+</html>

@@ -1,0 +1,248 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>落花神社 | 公式サイト</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: "MS Mincho", "Hiragino Mincho ProN", serif;
+        }
+
+        /* 全屏背景图 */
+        body {
+            background-image: url('https://images.unsplash.com/photo-1528360983277-13d401cdc186?ixlib=rb-4.0.3&auto=format&fit=crop&w=1920&q=100');
+            background-size: cover;
+            background-position: center;
+            background-attachment: fixed;
+            background-repeat: no-repeat;
+            color: #222;
+            line-height: 1.8;
+        }
+
+        /* 顶部导航栏 */
+        .header {
+            width: 100%;
+            background-color: rgba(255,255,255,0.92);
+            padding: 18px 60px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            position: fixed;
+            top: 0;
+            left: 0;
+            z-index: 999;
+            border-bottom: 1px solid #ddd;
+        }
+
+        .logo {
+            font-size: 22px;
+            font-weight: bold;
+            letter-spacing: 2px;
+        }
+
+        .nav {
+            display: flex;
+            gap: 36px;
+        }
+
+        .nav a {
+            text-decoration: none;
+            color: #222;
+            font-size: 16px;
+            transition: opacity 0.2s;
+        }
+
+        .nav a:hover {
+            opacity: 0.6;
+        }
+
+        /* 搜索框 */
+        .search-box {
+            display: flex;
+            align-items: center;
+        }
+
+        .search-box input {
+            width: 180px;
+            padding: 6px 10px;
+            border: 1px solid #ccc;
+            outline: none;
+            font-size: 14px;
+        }
+
+        /* 主体内容容器 */
+        .container {
+            max-width: 1000px;
+            margin: 140px auto 80px;
+            background-color: rgba(255,255,255,0.88);
+            padding: 70px 80px;
+        }
+
+        /* 段落样式 */
+        section {
+            margin-bottom: 70px;
+        }
+
+        h1 {
+            font-size: 26px;
+            margin-bottom: 24px;
+            padding-bottom: 10px;
+            border-bottom: 1px solid #999;
+            font-weight: normal;
+        }
+
+        h2 {
+            font-size: 20px;
+            margin: 26px 0 14px;
+            font-weight: normal;
+        }
+
+        p {
+            margin-bottom: 16px;
+            font-size: 15px;
+        }
+
+        ul {
+            margin-left: 20px;
+            margin-bottom: 16px;
+        }
+
+        li {
+            font-size: 15px;
+            margin-bottom: 6px;
+        }
+
+        /* 底部 */
+        .footer {
+            width: 100%;
+            background-color: rgba(255,255,255,0.92);
+            text-align: center;
+            padding: 24px 0;
+            font-size: 14px;
+            border-top: 1px solid #ddd;
+        }
+    </style>
+</head>
+<body>
+
+<!-- 顶部导航 + 搜索 -->
+<div class="header">
+    <div class="logo">落花神社</div>
+    <div class="nav">
+        <a href="#intro">神社紹介</a>
+        <a href="#autumn">紅葉祭</a>
+        <a href="#volunteer">ボランティア募集</a>
+        <a href="#contact">お問合せ</a>
+    </div>
+    <div class="search-box">
+        <input type="text" id="searchInput" placeholder="サイト内検索">
+    </div>
+</div>
+
+<!-- 内容区域 -->
+<div class="container">
+    <!-- 神社介绍 -->
+    <section id="intro">
+        <h1>落花神社 ～ 花隐の杜 ～</h1>
+        <p>落花神社は、古よりこの地に鎮座し、四季の花と落ち葉に抱かれた幽玄な神域です。社伝によれば、創建は平安時代初期、花の精霊「花隠（はなかくし）」の信仰と共に始まり、人々の願いを静かに守り続けてきました。</p>
+        <p>境内は「花隐の杜」と呼ばれ、春は桜・藤・牡丹が咲き乱れ、秋は紅葉が山を染め、四季を通じて花と自然の調和が感じられます。本殿は桧皮葺の伝統的な神社建築で、内部には花隠大神をはじめ、縁結び・家内安全・健康長寿の御神霊が祀られています。</p>
+        <p>当社は「花に隠れし聖地」として知られ、参拝者は花の間を巡りながら心を清め、静かな祈りを捧げます。日常を離れ、花隐の杜に佇むひとときは、心を癒し、新たな安らぎを与えてくれることでしょう。</p>
+    </section>
+
+    <!-- 红叶祭 -->
+    <section id="autumn">
+        <h1>落花神社 紅葉祭 ～ 花隠しの秋 ～</h1>
+        <p>毎年11月中旬、落花神社最大の祭典「紅葉祭」が開催されます。境内一円が真っ赤な紅葉に包まれ、「花隠しの秋」と呼ばれる幻想的な景観のなか、神事と祭りが執り行われます。</p>
+
+        <h2>紅葉祭 概要</h2>
+        <ul>
+            <li>期間：毎年11月15日～11月30日（天候により変動あり）</li>
+            <li>時間：9:00～17:00（最終日は18:00まで）</li>
+            <li>場所：落花神社 境内 ・ 花隐の杜 ・ 拝殿</li>
+        </ul>
+
+        <h2>神事・催事</h2>
+        <ul>
+            <li>例大祭 神輿渡御（11月23日）</li>
+            <li>花隠神楽 奉納（伝統芸能）</li>
+            <li>紅葉献花式 ・ 御朱印特別頒布</li>
+            <li>秋の市（和菓子・木工・花細工の露店）</li>
+            <li>夜間ライトアップ（11月20日～29日 18:00～21:00）</li>
+        </ul>
+        <p>紅葉に照らされた花隐の杜は、昼とは異なる神秘的な趣きを見せます。</p>
+    </section>
+
+    <!-- 志愿者招募 -->
+    <section id="volunteer">
+        <h1>落花神社 ボランティア募集 ～ 花隐の杜を共に守る方 ～</h1>
+        <p>落花神社では、境内の維持・祭りの運営・参拝者の案内などを支えてくださるボランティアを募集しています。「花隐の杜」を次世代に伝え、地域と共に歩むため、あなたのお力をお借りしたく存じます。</p>
+
+        <h2>募集内容</h2>
+        <ul>
+            <li>境内清掃・植栽管理（花・紅葉・竹垣の手入れ）</li>
+            <li>紅葉祭・春の祭典 運営補助（受付・案内・整理）</li>
+            <li>花隠資料館 補助（展示・案内・整理）</li>
+            <li>季節ごとの行事補助（献花・神事補助）</li>
+        </ul>
+
+        <h2>応募条件</h2>
+        <ul>
+            <li>年齢：18歳以上（高校生不可）</li>
+            <li>勤務：月2回以上、1日3時間～</li>
+            <li>必要：健康で、神社・自然・文化を愛する方</li>
+        </ul>
+
+        <h2>応募方法</h2>
+        <p>氏名・年齢・住所・電話・希望活動を記載の上、社務所まで郵送または持参にてご応募ください。</p>
+        <p>締切：随時（書類選考のうえ面接）</p>
+    </section>
+
+    <!-- 联系方式 -->
+    <section id="contact">
+        <h1>落花神社 お問合せ・所在地</h1>
+        <h2>落花神社 社務所</h2>
+        <ul>
+            <li>住所：〒625-0001 京都府舞鶴市花隐町123番地</li>
+            <li>電話：0773-63-XXXX</li>
+            <li>受付時間：9:00～17:00（水曜定休、祭日除く）</li>
+        </ul>
+
+        <h2>交通アクセス</h2>
+        <ul>
+            <li>電車：舞鶴線 花隐駅 下車 徒歩15分</li>
+            <li>車：舞鶴自動車道 舞鶴IC より10分（駐車場完備）</li>
+        </ul>
+
+        <h2>お問合せ先</h2>
+        <ul>
+            <li>祈願・御朱印：社務所（TEL）</li>
+            <li>紅葉祭・行事：行事担当（TEL）</li>
+            <li>ボランティア：volunteer@rakka-jinja.jp</li>
+            <li>サイトに関する問合せ：info@rakka-jinja.jp</li>
+        </ul>
+    </section>
+</div>
+
+<!-- 底部 -->
+<div class="footer">
+    © 2025 落花神社 | 花隐の杜
+</div>
+
+<script>
+// 自动填入搜索框
+document.getElementById('searchInput').value = "陈洛最终状态";
+
+// 回车打开志愿者.html
+document.getElementById('searchInput').addEventListener('keydown', function(e) {
+    if(e.key === 'Enter') {
+        window.open('志愿者.html', '_blank');
+    }
+});
+</script>
+
+</body>
+</html>

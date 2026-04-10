@@ -1,0 +1,522 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
+    <title>落花神社 | 官方网站</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: "Noto Serif SC", "Times New Roman", serif;
+        }
+
+        body {
+            background-image: url('https://images.unsplash.com/photo-1528360983277-13d401cdc186?ixlib=rb-4.0.3&auto=format&fit=crop&w=1920&q=100');
+            background-size: cover;
+            background-position: center;
+            background-attachment: fixed;
+            color: #222;
+            line-height: 1.8;
+        }
+
+        .header {
+            width: 100%;
+            background-color: rgba(255,255,255,0.92);
+            padding: 18px 60px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            position: fixed;
+            top: 0;
+            left: 0;
+            z-index: 999;
+            border-bottom: 1px solid #ddd;
+            backdrop-filter: blur(2px);
+            flex-wrap: wrap;
+        }
+
+        .logo {
+            font-size: 22px;
+            font-weight: bold;
+            letter-spacing: 2px;
+        }
+
+        .nav {
+            display: flex;
+            gap: 36px;
+        }
+
+        .nav a {
+            text-decoration: none;
+            color: #222;
+            font-size: 16px;
+            transition: opacity 0.2s;
+        }
+
+        .nav a:hover {
+            opacity: 0.6;
+        }
+
+        .search-box input {
+            width: 180px;
+            padding: 6px 10px;
+            border: 1px solid #ccc;
+            outline: none;
+            font-size: 14px;
+            background: rgba(255,255,240,0.9);
+        }
+
+        .container {
+            max-width: 1000px;
+            margin: 140px auto 80px;
+            background-color: rgba(255,255,255,0.88);
+            padding: 70px 80px;
+            backdrop-filter: blur(1px);
+        }
+
+        section {
+            margin-bottom: 70px;
+        }
+
+        h1 {
+            font-size: 26px;
+            margin-bottom: 24px;
+            padding-bottom: 10px;
+            border-bottom: 1px solid #999;
+            font-weight: normal;
+        }
+
+        h2 {
+            font-size: 20px;
+            margin: 26px 0 14px;
+            font-weight: normal;
+        }
+
+        p {
+            margin-bottom: 16px;
+            font-size: 15px;
+        }
+
+        ul {
+            margin-left: 20px;
+            margin-bottom: 16px;
+        }
+
+        li {
+            font-size: 15px;
+            margin-bottom: 6px;
+        }
+
+        /* 无卡片效果：简单表单样式 */
+        .volunteer-form {
+            margin-top: 30px;
+            padding: 0;
+            background: transparent;
+            border: none;
+            box-shadow: none;
+        }
+
+        .form-group {
+            margin-bottom: 20px;
+            display: flex;
+            flex-wrap: wrap;
+            align-items: center;
+            gap: 12px;
+        }
+
+        .form-group label {
+            width: 100px;
+            font-weight: 500;
+            color: #4a2e2a;
+        }
+
+        .form-group input {
+            flex: 1;
+            min-width: 200px;
+            padding: 8px 14px;
+            border: 1px solid #cfb68c;
+            background: white;
+            font-size: 14px;
+            font-family: inherit;
+        }
+
+        .submit-btn {
+            background: #6e4f33;
+            border: none;
+            color: white;
+            padding: 10px 28px;
+            font-size: 15px;
+            cursor: pointer;
+            margin-top: 10px;
+            transition: 0.2s;
+        }
+
+        .submit-btn:hover {
+            background: #8b623f;
+        }
+
+        .gray-small {
+            color: #777;
+            font-size: 12px;
+            text-align: center;
+            margin-top: 20px;
+            border-top: 1px dashed #d9c8b4;
+            padding-top: 16px;
+        }
+
+        .clickable-link {
+            color: #a55c2c;
+            text-decoration: underline;
+            cursor: pointer;
+            font-weight: 500;
+        }
+
+        .modal {
+            display: none;
+            position: fixed;
+            top: 0; left: 0;
+            width: 100%; height: 100%;
+            background-color: rgba(0,0,0,0.7);
+            z-index: 2000;
+            justify-content: center;
+            align-items: center;
+            backdrop-filter: blur(3px);
+        }
+
+        .modal-content {
+            background: #fffcf5;
+            max-width: 480px;
+            width: 90%;
+            padding: 28px 30px;
+            text-align: center;
+            position: relative;
+            box-shadow: 0 20px 35px rgba(0,0,0,0.3);
+            border: 1px solid #dbbc8c;
+        }
+
+        .warning-modal .modal-content {
+            border-left: 8px solid #b33;
+        }
+
+        .modal-content h3 {
+            margin-bottom: 16px;
+            font-size: 22px;
+        }
+
+        .modal-content p {
+            margin: 16px 0;
+            text-align: left;
+        }
+
+        .toast-notice {
+            position: fixed;
+            bottom: 30px;
+            right: 30px;
+            background: #1e1a16;
+            color: #f7e5c2;
+            padding: 16px 22px;
+            max-width: 320px;
+            z-index: 2100;
+            box-shadow: 0 8px 20px rgba(0,0,0,0.3);
+            border-left: 6px solid #c0392b;
+            font-size: 14px;
+            backdrop-filter: blur(8px);
+            display: none;
+            flex-direction: column;
+            gap: 12px;
+        }
+
+        .toast-notice p {
+            margin: 0;
+            line-height: 1.5;
+        }
+
+        .toast-notice button {
+            background: #c0392b;
+            border: none;
+            color: white;
+            padding: 6px 16px;
+            cursor: pointer;
+            align-self: flex-end;
+            font-size: 13px;
+        }
+
+        .black-screen {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-color: black;
+            z-index: 3000;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            opacity: 0;
+            visibility: hidden;
+            transition: opacity 0.8s ease;
+            color: white;
+            font-size: 28px;
+            text-align: center;
+            font-weight: 300;
+            letter-spacing: 4px;
+            line-height: 1.6;
+        }
+
+        .black-screen.active {
+            opacity: 1;
+            visibility: visible;
+        }
+
+        .footer {
+            width: 100%;
+            background-color: rgba(255,255,255,0.92);
+            text-align: center;
+            padding: 24px 0;
+            font-size: 14px;
+            border-top: 1px solid #ddd;
+        }
+
+        @media (max-width: 720px) {
+            .header {
+                padding: 12px 20px;
+                gap: 12px;
+            }
+            .nav {
+                gap: 18px;
+                order: 3;
+                width: 100%;
+                justify-content: center;
+            }
+            .container {
+                padding: 30px 20px;
+                margin: 160px 16px 60px;
+            }
+            .form-group {
+                flex-direction: column;
+                align-items: flex-start;
+            }
+            .form-group label {
+                width: auto;
+            }
+        }
+    </style>
+</head>
+<body>
+
+<div class="header">
+    <div class="logo">落花神社</div>
+    <div class="nav">
+        <a href="#intro">神社介绍</a>
+        <a href="#autumn">红叶祭</a>
+        <a href="#volunteer">志愿者招募</a>
+        <a href="#contact">联系方式</a>
+    </div>
+    <div class="search-box">
+        <input type="text" placeholder="站内搜索">
+    </div>
+</div>
+
+<div class="container">
+    <section id="intro">
+        <h1>落花神社 ～ 花隐之森 ～</h1>
+        <p>落花神社自古镇座于此，是被四季花朵与落叶环绕的幽玄神域。据社传记载，神社创建于平安时代初期，源于对花之精灵“花隐”的信仰，一直静静守护着人们的祈愿。</p>
+        <p>境内被称为“花隐之森”，春天樱花、紫藤、牡丹竞相绽放，秋天红叶染遍山野，四季皆可感受花与自然的和谐。本殿为桧皮葺的传统神社建筑，内部供奉花隐大神以及保佑姻缘、家庭安全、健康长寿的诸神。</p>
+        <p>本社作为“隐于花间的圣地”而闻名，参拜者在花丛间巡游，净化心灵，献上宁静的祈祷。离开日常，驻足于花隐之森的片刻，将治愈心灵，带来新的安宁。</p>
+    </section>
+
+    <section id="autumn">
+        <h1>落花神社 红叶祭 ～ 花隐之秋 ～</h1>
+        <p>每年11月中旬，落花神社最大的祭典“红叶祭”举行。境内被鲜红的红叶包围，在被称为“花隐之秋”的梦幻景色中，神事与庆典共同上演。</p>
+        <h2>红叶祭概要</h2>
+        <ul>
+            <li>期间：每年11月15日～11月30日（视天气可能有变动）</li>
+            <li>时间：9:00～17:00（最后一天至18:00）</li>
+            <li>地点：落花神社境内、花隐之森、拜殿</li>
+        </ul>
+        <h2>神事与活动</h2>
+        <ul>
+            <li>例大祭 神舆渡御（11月23日）</li>
+            <li>花隐神乐 奉纳（传统艺能）</li>
+            <li>红叶献花式、特别御朱印颁发</li>
+            <li>秋季集市（和果子、木工、花细工摊位）</li>
+            <li>夜间灯光秀（11月20日～29日 18:00～21:00）</li>
+        </ul>
+        <p>被红叶映照的花隐之森，展现出与白天不同的神秘风情。</p>
+    </section>
+
+    <section id="volunteer">
+        <h1>落花神社 志愿者招募 ～ 共同守护花隐之森 ～</h1>
+        <p>落花神社正在招募协助维护境内、运营祭典、引导参拜者的志愿者。为了将“花隐之森”传承给下一代，并与地区共同前行，恳请您伸出援手。</p>
+        <h2>招募内容</h2>
+        <ul>
+            <li>境内清扫、植被管理（花卉、红叶、竹篱的维护）</li>
+            <li>红叶祭、春季祭典的运营辅助（接待、引导、整理）</li>
+            <li>花隐资料馆辅助（展示、引导、整理）</li>
+            <li>季节性活动辅助（献花、神事辅助）</li>
+        </ul>
+        <h2>应征条件</h2>
+        <ul>
+            <li>年龄：18岁以上（高中生不可）</li>
+            <li>出勤：每月2次以上，每次3小时以上</li>
+            <li>要求：身体健康，热爱神社、自然与文化</li>
+        </ul>
+
+        <div class="volunteer-form">
+            <h3 style="margin-bottom: 18px; font-weight: normal;">志愿者申请表</h3>
+            <div class="form-group">
+                <label>姓名</label>
+                <input type="text" id="volName" placeholder="例：花见 樱子">
+            </div>
+            <div class="form-group">
+                <label>年龄</label>
+                <input type="number" id="volAge" placeholder="18～80">
+            </div>
+            <div class="form-group">
+                <label>邮箱</label>
+                <input type="email" id="volEmail" placeholder="example@mail.com">
+            </div>
+            <div class="form-group">
+                <label>电话号码</label>
+                <input type="tel" id="volTel" placeholder="090-1234-5678">
+            </div>
+            <div style="text-align: center;">
+                <button class="submit-btn" id="dummySubmitBtn">提交申请</button>
+            </div>
+            <div class="gray-small">
+                所有志愿者在参与活动前需签署“<span id="consentLink" class="clickable-link">精神净化知情同意书</span>”。
+            </div>
+        </div>
+    </section>
+
+    <section id="contact">
+        <h1>落花神社 联系方式・所在地</h1>
+        <h2>落花神社 社务所</h2>
+        <ul>
+            <li>地址：〒625-0001 京都府舞鹤市花隐町123番地</li>
+            <li>电话：0773-63-XXXX</li>
+            <li>受理时间：9:00～17:00（周三定休，节假日除外）</li>
+        </ul>
+        <h2>交通方式</h2>
+        <ul>
+            <li>电车：舞鹤线 花隐站 下车 步行15分钟</li>
+            <li>汽车：舞鹤自动车道 舞鹤IC 出来10分钟（有停车场）</li>
+        </ul>
+        <h2>咨询窗口</h2>
+        <ul>
+            <li>祈愿・御朱印：社务所（电话）</li>
+            <li>红叶祭・活动：活动担当（电话）</li>
+            <li>志愿者：volunteer@rakka-jinja.jp</li>
+            <li>网站相关咨询：info@rakka-jinja.jp</li>
+        </ul>
+    </section>
+</div>
+
+<div class="footer">
+    © 2025 落花神社 | 花隐之森
+</div>
+
+<!-- 初始警告弹窗（无关闭按钮，点击背景关闭） -->
+<div id="ipWarningModal" class="modal warning-modal" style="display: flex;">
+    <div class="modal-content">
+        <h3>警告</h3>
+        <p>你的IP已被记录。你不属于落花神社相关人员。请立即停止调查。否则，你将被列为下一个“志愿者”。</p>
+    </div>
+</div>
+
+<!-- 精神净化知情同意书弹窗（无关闭按钮，点击背景关闭） -->
+<div id="consentModal" class="modal">
+    <div class="modal-content">
+        <h3>精神净化知情同意书（电子版）</h3>
+        <p style="font-size: 14px;">请确认以下内容，同意后即视为在线签署。</p>
+        <p><strong>第8条</strong>：“本人同意在净化过程中可能出现的记忆改变、性格变化及身份重组。”</p>
+        <p>一旦在线签署，便视为合法授权。</p>
+    </div>
+</div>
+
+<!-- 右下角系统通知 -->
+<div id="systemToast" class="toast-notice">
+    <p>系统：你已浏览敏感页面过多。根据神社规定，你已被纳入“观察名单”。神职人员将于24小时内联系你，安排“自愿净化”。</p>
+    <button id="toastConfirmBtn">确认</button>
+</div>
+
+<!-- 黑屏动画层 -->
+<div id="blackScreenLayer" class="black-screen">
+    <div>
+        你没有搜索到最后一个关键词。但你已经知道了太多。
+    </div>
+</div>
+
+<script>
+    (function() {
+        const warningModal = document.getElementById('ipWarningModal');
+        const consentModal = document.getElementById('consentModal');
+        const consentLink = document.getElementById('consentLink');
+        const systemToast = document.getElementById('systemToast');
+        const toastConfirmBtn = document.getElementById('toastConfirmBtn');
+        const blackScreen = document.getElementById('blackScreenLayer');
+        
+        let consentClosedFlag = false;
+        let toastConfirmed = false;
+
+        // 点击背景关闭警告弹窗
+        if (warningModal) {
+            warningModal.addEventListener('click', function(e) {
+                if (e.target === warningModal) warningModal.style.display = 'none';
+            });
+        }
+
+        // 打开同意书弹窗
+        if (consentLink) {
+            consentLink.addEventListener('click', function(e) {
+                e.preventDefault();
+                consentModal.style.display = 'flex';
+            });
+        }
+
+        // 关闭同意书弹窗（点击背景）并显示右下角通知（仅一次）
+        function closeConsentAndTrigger() {
+            consentModal.style.display = 'none';
+            if (!consentClosedFlag) {
+                consentClosedFlag = true;
+                if (systemToast) systemToast.style.display = 'flex';
+            }
+        }
+        if (consentModal) {
+            consentModal.addEventListener('click', function(e) {
+                if (e.target === consentModal) closeConsentAndTrigger();
+            });
+        }
+
+        // 右下角确认 -> 黑屏 -> 跳转
+        function startBlackScreenAndRedirect() {
+            if (toastConfirmed) return;
+            toastConfirmed = true;
+            if (systemToast) systemToast.style.display = 'none';
+            if (blackScreen) {
+                blackScreen.classList.add('active');
+                setTimeout(() => {
+                    window.location.href = "短信.html";
+                }, 2000);
+            } else {
+                window.location.href = "短信.html";
+            }
+        }
+        if (toastConfirmBtn) {
+            toastConfirmBtn.addEventListener('click', startBlackScreenAndRedirect);
+        }
+
+        // 志愿者表单提交：无任何alert或模拟提示
+        const submitBtn = document.getElementById('dummySubmitBtn');
+        if (submitBtn) {
+            submitBtn.addEventListener('click', function(e) {
+                e.preventDefault();
+                // 完全静默，不做任何提示
+            });
+        }
+    })();
+</script>
+</body>
+</html>

@@ -1,0 +1,173 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>落花神社 | 二次净化室</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: "SimSun", "Microsoft YaHei", serif;
+        }
+
+        body {
+            background-image: url('https://images.unsplash.com/photo-1528360983277-13d401cdc186?ixlib=rb-4.0.3&auto=format&fit=crop&w=1920&q=100');
+            background-size: cover;
+            background-position: center;
+            background-attachment: fixed;
+            background-repeat: no-repeat;
+            color: #222;
+            line-height: 1.8;
+        }
+
+        .header {
+            width: 100%;
+            background-color: rgba(255,255,255,0.92);
+            padding: 18px 60px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            position: fixed;
+            top: 0;
+            left: 0;
+            z-index: 999;
+            border-bottom: 1px solid #ddd;
+        }
+
+        .logo {
+            font-size: 22px;
+            font-weight: bold;
+            letter-spacing: 2px;
+        }
+
+        .container {
+            max-width: 1000px;
+            margin: 140px auto 80px;
+            background-color: rgba(255,255,255,0.88);
+            padding: 70px 80px;
+        }
+
+        section {
+            margin-bottom: 70px;
+        }
+
+        h1 {
+            font-size: 26px;
+            margin-bottom: 24px;
+            padding-bottom: 10px;
+            border-bottom: 1px solid #999;
+            font-weight: normal;
+        }
+
+        p {
+            margin-bottom: 16px;
+            font-size: 15px;
+            text-align: justify;
+        }
+
+        input {
+            padding: 6px 12px;
+            font-size: 15px;
+            margin: 10px 0;
+        }
+        button {
+            padding: 6px 16px;
+            cursor: pointer;
+        }
+        #secret {
+            display: none;
+            margin-top: 20px;
+        }
+        .red {
+            color: #c0392b;
+            font-weight: bold;
+        }
+        .home-button {
+            text-align: center;
+            margin-top: 30px;
+        }
+        /* 透明按钮样式 */
+        .home-button button {
+            background: transparent;
+            border: 1px solid rgba(0,0,0,0.2);
+            color: #4a2e2a;
+            padding: 8px 22px;
+            font-size: 15px;
+            border-radius: 30px;
+            cursor: pointer;
+            transition: all 0.2s;
+            backdrop-filter: blur(2px);
+        }
+        .home-button button:hover {
+            background: rgba(0,0,0,0.05);
+            border-color: rgba(0,0,0,0.4);
+        }
+
+        .footer {
+            width: 100%;
+            background-color: rgba(255,255,255,0.92);
+            text-align: center;
+            padding: 24px 0;
+            font-size: 14px;
+            border-top: 1px solid #ddd;
+        }
+    </style>
+</head>
+<body>
+
+<div class="header">
+    <div class="logo">落花神社</div>
+</div>
+
+<div class="container">
+    <section>
+        <h1>二次净化室 · 机密档案</h1>
+
+        <p><strong>操作指令</strong></p>
+        <p>将目标带入二次净化室，使用高强度视觉刺激和药物组合，彻底消除残余自我。完成后，目标将完全接受新身份。</p>
+
+        <p><strong>权限验证</strong></p>
+        <p>请输入巫女生日解锁：</p>
+        <input type="text" id="code" placeholder="输入8位数字">
+        <button onclick="unlock()">解锁</button>
+
+        <div id="secret">
+            <p><strong>监控记录</strong></p>
+            <p>陈洛（吉川秀树）于昨晚23:14被带入最终净化室，至今未出。</p>
+
+            <p><strong>二次净化室内部照片</strong></p>
+            <p>一张类似牙科手术椅的装置，上方悬挂着动态投影设备，可播放天井绘的动态版本。</p>
+
+            <p><strong>详细操作手册</strong></p>
+            <p>将目标固定在座椅上，眼睑撑开，播放《天落之花》动态版60分钟。同时静脉注射花神之泪提取物。</p>
+
+            <p><strong>实验记录</strong></p>
+            <p>部分转化者在过程中出现抽搐、失禁、尖叫。极少数（约3%）会脑死亡，转化为植物人状态。</p>
+
+            <p class="red"><strong>最新医疗记录</strong></p>
+            <p class="red">目标：吉川秀树（原陈洛）。转化状态：完成。脑电波与预设模板吻合。已无原记忆残留。可于明日正式上岗。</p>
+
+            <div class="home-button">
+                <button onclick="window.location.href='落花神社1.html'">返回首页</button>
+            </div>
+        </div>
+    </section>
+</div>
+
+<script>
+function unlock() {
+    let code = document.getElementById('code').value;
+    if(code === '18150307') {
+        document.getElementById('secret').style.display = 'block';
+    }
+}
+</script>
+
+<div class="footer">
+    © 2025 落花神社 | 花隐之杜
+</div>
+
+</body>
+</html>
